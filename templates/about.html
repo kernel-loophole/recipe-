@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <title>GYM excercise </title>
+</head>
+<style>
+    body {
+      background-color: #333333;
+      color: #FFFFFF;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      height: 40px;
+      padding: 0 10px;
+      font-size: 16px;
+      border: 1px solid #CCCCCC;
+      margin-bottom: 20px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+      background-color: #222222;
+      color: #FFFFFF;
+      border: none;
+    }
+    input[type="submit"]:hover {
+      cursor: pointer;
+      background-color: #555555;
+    }
+
+.radio {
+	background: #454857;
+	padding: 4px;
+	border-radius: 3px;
+	box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+		0 0 0 3px rgba(185, 185, 185, 0.3);
+	position: relative;
+}
+
+.radio input {
+	width: auto;
+	height: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 2px;
+	padding: 4px 8px;
+	background: #454857;
+	color: #bdbdbdbd;
+	font-size: 14px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	transition: all 100ms linear;
+}
+
+.radio input:checked {
+	background-image: linear-gradient(180deg, #95d891, #74bbad);
+	color: #fff;
+	box-shadow: 0 1px 1px #0000002e;
+	text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio input:before {
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+    </style>
+<body>
+
+  <form action="/about" method="post">
+    What are your fitness goals and how do you plan to achieve them?
+      <input type="text" name="value" placeholder="Enter " required />
+      What is your current fitness level and activity level, and what types of exercise do you enjoy?
+      <input type="text" name="value1" placeholder="Enter" required />
+      What is your daily routine and how much time can you commit to exercise each week?
+      <input type="text" name="value2" placeholder="Enter" required />
+      What is your past experience with exercise and fitness, and what has worked well for you?
+      <input type="text" name="value3" placeholder="Enter" required />
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="begingger" required="required"/>
+          <label class="form-check-label" for="flexRadioDefault1">
+              begingger
+            </label>
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="intermidate" required="required"/>
+      <label class="form-check-label" for="flexRadioDefault2">
+        intermidate
+      </label>
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="advance" required="required"/>
+      <label class="form-check-label" for="flexRadioDefault2">
+        advance
+      </label>
+      <input type="submit" value="genrate workout" />
+    </form>
+
+    {% if result %}
+    <div>{{ result }}</div>
+    {% endif %}
+</body>

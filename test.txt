@@ -1,0 +1,13 @@
+// Import the GPT API client library
+const GptApiClient = require('gpt-api-client');
+
+// Initialize the GPT API client with your API key
+const gptClient = new GptApiClient({ apiKey: 'YOUR_API_KEY' });
+
+// Generate text using the GPT model
+const generatedText = gptClient.generate({
+  prompt: 'The sky is blue and the sun is shining.',
+  length: 50,
+});
+
+console.log(generatedText);
